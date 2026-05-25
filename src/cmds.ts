@@ -3,7 +3,7 @@ import Gift from "./commands/gift.ts";
 import Guess from "./commands/guess.ts";
 import Hello from "./commands/hello.ts";
 import Numberdex from "./commands/numberdex.ts";
-import Poweroff from "./commands/poweroff.ts";
+import Stop from "./commands/stop.ts";
 import Reload from "./commands/reload.ts";
 import Restart from "./commands/restart.ts";
 import User from "./commands/user.ts";
@@ -13,7 +13,7 @@ const Commands: readonly Command[] = [
   Guess,
   Numberdex,
   User,
-  Poweroff,
+  Stop,
   Restart,
   Reload,
   Hello,

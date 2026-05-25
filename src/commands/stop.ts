@@ -7,23 +7,17 @@
 import type { Command } from "#utils/types.ts";
 import type { Client, CommandInteraction } from "discord.js";
 
-const Poweroff: Command = {
+const Stop: Command = {
   async run(_client: Client, interaction: CommandInteraction): Promise<void> {
     if (interaction.user.id !== "1051147056481308744") {
       await interaction.reply("hey don't shut off the bot you're not <@1051147056481308744>");
       return;
     }
-    await interaction.reply("Sorry I gotta sleep, see ya later!");
-    if (Deno.statSync("/bin/systemctl")) {
-      Deno.spawn("/bin/systemctl", ["poweroff"]);
-    } else {
-      Deno.exit(0);
-    }
-    // Should never return
-    await new Promise(resolve => setTimeout(resolve, Number.MAX_SAFE_INTEGER));
+    await interaction.reply("Shutting down");
+    Deno.exit(0);
   },
   description: "Turn the bot off",
-  name: "poweroff",
+  name: "stop",
 };
 
-export default Poweroff;
+export default Stop;

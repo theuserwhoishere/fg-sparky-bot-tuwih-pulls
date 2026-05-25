@@ -23,7 +23,8 @@ const Guess: Command = {
       return;
     }
 
-    //
+    // defer reply cause my internet is shitty
+    await interaction.deferReply();
     const difficulty = interaction.options.get("difficulty", true).value as
       | Exclude<Difficulties, "legendary">
       | "random";
@@ -48,7 +49,7 @@ const Guess: Command = {
       .setName(unwrappedEntry.image.slice(unwrappedEntry.image.lastIndexOf("/") + 1))
       .setSpoiler(unwrappedEntry.uuid === "d828f344-b134-47a1-93c9-56e25d5c9e61");
 
-    await interaction.reply({
+    await interaction.followUp({
       content: content + devMessage,
       files: [image],
     });
