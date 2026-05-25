@@ -7,6 +7,7 @@
 import { DataSource } from "typeorm";
 import { NumberhumanData } from "./numberhuman.ts";
 import { UserProfile } from "./user-profile.ts";
+import libSQL from "libsql";
 
 export const UsersDB: DataSource = new DataSource({
   type: "better-sqlite3",
@@ -17,4 +18,5 @@ export const UsersDB: DataSource = new DataSource({
   migrations: [],
   subscribers: [],
   enableWAL: true,
+  driver: libSQL,
 });
