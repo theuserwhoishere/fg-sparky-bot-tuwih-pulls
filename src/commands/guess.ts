@@ -24,7 +24,14 @@ const Guess: Command = {
     }
 
     // defer reply cause my internet is shitty
-    await interaction.deferReply();
+    try {
+      await interaction.deferReply();
+    } catch (err) {
+      if (!Error.isError(err)) throw err;
+      Logger.error(`Tried deferring reply but it was too late! Error:`);
+      Logger.error(err.stack);
+      return;
+    }
     const difficulty = interaction.options.get("difficulty", true).value as
       | Exclude<Difficulties, "legendary">
       | "random";
