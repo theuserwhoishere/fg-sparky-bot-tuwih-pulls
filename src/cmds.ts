@@ -7,6 +7,7 @@ import Stop from "./commands/stop.ts";
 import Reload from "./commands/reload.ts";
 import Restart from "./commands/restart.ts";
 import User from "./commands/user.ts";
+import Ping from "./commands/ping.ts";
 
 const Commands: readonly Command[] = [
   Gift,
@@ -17,6 +18,7 @@ const Commands: readonly Command[] = [
   Restart,
   Reload,
   Hello,
+  Ping,
 ];
 
 export default Commands;
