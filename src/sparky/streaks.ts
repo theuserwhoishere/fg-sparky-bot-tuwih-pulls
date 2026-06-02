@@ -23,8 +23,7 @@ export class StreakCollection extends Collection<string, number> {
     guildId: string,
     difficulty: "easy" | "medium" | "hard" | "legendary",
   ): number {
-    let streakGain = 1 + (this.get(`${userId}.${guildId}`) ?? 0) / 10;
-    if (streakGain > 1.5) streakGain = Math.min(Math.sqrt(streakGain / 1.5) * 1.5, 3);
+    let streakGain = Math.min(1 + (this.get(`${userId}.${guildId}`) ?? 0) / 20, 1.5);
     return Math.round(getGainFromDifficulty(difficulty) * streakGain);
   }
 
