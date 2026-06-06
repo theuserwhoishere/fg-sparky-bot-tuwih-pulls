@@ -75,6 +75,15 @@ const Gift: Command = {
       return;
     }
 
+    if (giftingUser.id === userInDB.id) {
+      Logger.warning(`user ${interaction.user.displayName} tried gifting themselves`);
+      await interaction.reply({
+        content: `You can't gift yourself silly! How would that even work?`,
+        flags: MessageFlags.Ephemeral,
+      });
+      return;
+    }
+
     const content = [
       `User ${userMention(interaction.user.id)} wants to gift ${
         userMention(
@@ -114,6 +123,7 @@ const Gift: Command = {
           giftingUser.tokens -= amount;
           giftCollection.delete(reply);
           await userInDB.save();
+          await giftingUser.save();
           await interaction.editReply({
             components: [createButtonRow(false)],
           });
