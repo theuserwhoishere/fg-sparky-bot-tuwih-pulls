@@ -9,6 +9,14 @@ const achievements: Achievement[] = [
     check() {
       return true;
     }
+  }, {
+    id: "t1",
+    name: "Tet",
+    description: "this is for guessing an entry but not getting it correct",
+    event: ACHIEVEMENT_EVENT.SPARKY_GUESS,
+    check() {
+      return true;
+    }
   }
 ];
 export default achievements;
