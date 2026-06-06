@@ -54,7 +54,7 @@ export function handleResponse(
         streakTracker.set(interaction.channelId, `${message.author.id}.${message.guildId!}`);
       }
 
-      await updateUserStats(message, await getUser(message.author.id, message.guildId!), streakCollection, number);
+      await updateUserStats(message, await getUser(message.author.id, message.guildId!), streakCollection, number, message.content);
     }
   };
 
