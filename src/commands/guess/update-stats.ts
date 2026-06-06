@@ -22,10 +22,10 @@ function successMessage(args: {
   if (args.achs.length > 0) {
     const achData = args.achs.map(id => Achievements.get(id)).filter(a => a !== undefined);
     const achMessage = achData.map(a => [
-      heading(`You've unlocked achievement ${a.name}!`),
+      heading(`You've unlocked a new achievement: ${a.name}!`),
       italic(a.description)
     ].join("\n")).join(`\n\n`);
-    return `${achMessage}\n${header}\n${tokenGain}\n${streakMessage}`;
+    return `${achMessage}\n\n${header}\n${tokenGain}\n${streakMessage}`;
   } else {
     return `${header}\n${tokenGain}\n${streakMessage}`;
   }
