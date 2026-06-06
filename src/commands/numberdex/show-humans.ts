@@ -4,24 +4,15 @@ import type { ServerSlashCommandInteraction } from "#utils/types.ts";
 import { chatInputApplicationCommandMention, italic, type User } from "discord.js";
 import { getNumberhumansBy } from "./numberhumans.ts";
 import type { NumberhumanSortingOrder } from "./sorting.ts";
+import { PaginatedMessage } from "@sapphire/discord.js-utilities";
 
 function capitalize<T extends string>(val: T): Capitalize<T> {
   // oxlint-disable-next-line typescript/no-unsafe-type-assertion
   return `${val.charAt(0).toUpperCase()}${val.slice(1)}` as Capitalize<T>;
 }
 
-const slashCommandMention = chatInputApplicationCommandMention(
-  "numberdex show-humans",
-  process.env.NODE_ENV === "development" ? "1454578425414291613" : "1452067362458308820",
-);
-
 function createCollectionMessage(user: User, page: number, numberhumans: NumberhumanData[]): string {
-  const header = [
-    `# Numberhuman collection for ${user.displayName} (${user.username})`,
-    `Switch pages by running ${slashCommandMention} again.`,
-  ];
-
-  console.log(numberhumans);
+  const header = `# Numberhuman collection for ${user.displayName} (${user.username})`;
 
   const body = numberhumans.map(value => {
     const humanInStore = Numberhumans.get(value.id).expect("should not be undefined");
@@ -33,13 +24,12 @@ function createCollectionMessage(user: User, page: number, numberhumans: Numberh
     }"${humanInStore.name}" (HP: ${totalHP}, ATK: ${totalAtk})`;
   });
 
-  return `${header.join("\n")}\n\n${body.slice((page - 1) * 10, page * 10).join("\n")}`;
+  return `${header}\n\n${body.slice((page - 1) * 10, page * 10).join("\n")}`;
 }
 
 export default async function numberdexShowHumans(
   interaction: ServerSlashCommandInteraction,
   user: User,
-  pageNumber: number,
   sortingOrder: NumberhumanSortingOrder,
 ): Promise<void> {
   const dbUser = await UserProfile.findOne({
@@ -54,8 +44,13 @@ export default async function numberdexShowHumans(
     dbUser,
     Numberhumans,
   );
+  const numberhumanChunk = 10;
 
-  await interaction.reply({
-    content: createCollectionMessage(user, pageNumber, realNumbers),
-  });
+  const paginatedContent = new PaginatedMessage();
+
+  for (let i = 0; i < realNumbers.length; i += numberhumanChunk) {
+    paginatedContent.addPageContent(createCollectionMessage(user, Math.floor(i / 10) + 1, realNumbers))
+  }
+
+  paginatedContent.run(interaction);
 }

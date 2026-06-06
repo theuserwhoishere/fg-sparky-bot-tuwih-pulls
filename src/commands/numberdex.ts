@@ -62,9 +62,7 @@ const Numberdex: Command = {
       }
       case "show-humans": {
         const user = interaction.options.getUser("user", true);
-        const pageNumber = interaction.options.getInteger("page", true);
         const dbUser = await getUser(user.id, interaction.guildId);
-        //
         const sortingOrder = interaction.options.getString("sorting") as NumberhumanSortingOrder | null
           ?? NumberhumanSortingOrder.ByCatchId;
         if (dbUser === null) {
@@ -74,7 +72,7 @@ const Numberdex: Command = {
           });
           return;
         }
-        await numberdexShowHumans(interaction, user, pageNumber, sortingOrder);
+        await numberdexShowHumans(interaction, user, sortingOrder);
         return;
       }
       default: {
@@ -120,12 +118,6 @@ const Numberdex: Command = {
           name: "user",
           description: "User you want to view the collection of",
           type: ApplicationCommandOptionType.User,
-          required: true,
-        },
-        {
-          name: "page",
-          description: "The page number",
-          type: ApplicationCommandOptionType.Integer,
           required: true,
         },
         {
