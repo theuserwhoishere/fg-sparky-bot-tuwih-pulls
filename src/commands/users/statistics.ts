@@ -76,5 +76,5 @@ export default async function serverStatisticsDisplay(
     `  - legendary numbers: ${calculatedStatistics.numbersGuessed.legendary.total} (total), ${calculatedStatistics.numbersGuessed.legendary.unique} (unique) [${calculatedStatistics.numberPercentages.legendary}]`,
   ]);
 
-  await interaction.reply({ content });
+  await interaction.editReply({ content });
 }
