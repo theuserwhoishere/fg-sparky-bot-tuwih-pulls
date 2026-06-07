@@ -1,3 +1,7 @@
+import { bold, italic } from "discord.js";
+import type { NumberhumanData } from "#db";
+import type { NumberhumanStore } from "#stores-types";
+
 /**
  * @license
  * fg-sparky-bot - Guess the FG number based on its symbol
@@ -31,6 +35,11 @@ export function formatPercent(number: number, precision = 1): string {
 
 export function formatAdd(number: number, precision = 1): string {
   return `${number < 0 ? "" : "+"}${number.toFixed(precision)}`;
+}
+
+export function formatHuman(numberhuman: NumberhumanData, numberhumanStore: NumberhumanStore): string {
+  const numberhumanData = numberhumanStore.get(numberhuman.id).expect("should exist");
+  return `level ${bold(numberhuman.level.toString())}, ${italic(numberhuman.evolution)} ${numberhumanData.name} (HP: ${bold(numberhuman.totalHP(numberhumanStore).toFixed(2))}, ATK: ${bold(numberhuman.totalAtk(numberhumanStore).toFixed(2))}))`;
 }
 
 /**
