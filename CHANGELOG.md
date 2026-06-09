@@ -1,5 +1,42 @@
 # changelog
 
+## v1.4.0-beta.0 - June 8th, 2026
+
+first release in a while,,, anyways i added the features i long wanted
+
+### Features
+
+- \[[`7d6d1572`](https://github.com/skylafalls/fg-sparky-bot/commit/7d6d1572377e3699d1b0bcc9d0d47e5af237625e)\] - numberdex: trading numberhumans ([#50](https://github.com/bbn-foundation/fg-sparky-bot/pull/50)) by @skylafalls
+- \[[`b8b73f1d`](https://github.com/skylafalls/fg-sparky-bot/commit/b8b73f1dd76341e0794db3a6c428085eee9fc25d)\] - fg-sparky: add achievements ([#49](https://github.com/bbn-foundation/fg-sparky-bot/pull/49)) by @skylafalls
+- \[[`9d6d54bf`](https://github.com/skylafalls/fg-sparky-bot/commit/9d6d54bf00e21383882ac82a60266861bfbf8401)\] - user/show: multipage stats by @skylafalls
+- \[[`199a236b`](https://github.com/skylafalls/fg-sparky-bot/commit/199a236b88a02f1f7530d0cf1aa7e798e851bef2)\] - user/statistics: add numberdex statistics by @skylafalls
+- \[[`a82b12be`](https://github.com/skylafalls/fg-sparky-bot/commit/a82b12be33345139ffb89173379ac44daaa802f8)\] - numberdex/show-humans: add multipage messages by @skylafalls
+- \[[`f57428bf`](https://github.com/skylafalls/fg-sparky-bot/commit/f57428bfb0e8cd5f2c0a616cb366cbea99a240a6)\] - user/leaderboard: add multipage messages to the user leadeboard by @skylafalls
+- \[[`0a6c9fee`](https://github.com/skylafalls/fg-sparky-bot/commit/0a6c9fee233345dc79686d600451aa0587571bb4)\] - cmds: add /ping to check latency by @skylafalls
+- \[[`5a906add`](https://github.com/skylafalls/fg-sparky-bot/commit/5a906add043102f917eb6f8b6988c63f1e787e25)\] - cmds: replace /poweroff with /stop so i dont turn off my laptop by @skylafalls
+
+### Fixes
+
+- \[[`e2039ae1`](https://github.com/skylafalls/fg-sparky-bot/commit/e2039ae1735f50178052137f982c9a4a1204df85)\] - user/statittics: editReply rather then just replying by @skylafalls
+- \[[`6d9c6b3a`](https://github.com/skylafalls/fg-sparky-bot/commit/6d9c6b3aebf75aaa82b8399fe7cf26f6563e2817)\] - user/leaderboard: modulo the correct number by @skylafalls
+- \[[`7eaf19a7`](https://github.com/skylafalls/fg-sparky-bot/commit/7eaf19a7c3bbf142195df8f9abb87bebca26fef6)\] - gift: disallow gifting yourselves, and subtract the tokens by @skylafalls
+- \[[`645acbd9`](https://github.com/skylafalls/fg-sparky-bot/commit/645acbd91be82588fe4bc8b2689f71f3fd9682c8)\] - user/leaderboard: do chunks of 15 not 5 by @skylafalls
+- \[[`c5e216cb`](https://github.com/skylafalls/fg-sparky-bot/commit/c5e216cbcee231119bbfced49dc158a8cefe63e9)\] - misc: idfk^2 by @skylafalls
+- \[[`f5fb8961`](https://github.com/skylafalls/fg-sparky-bot/commit/f5fb89610cb27a05982776c906ba6b540e418eb5)\] - misc: idfk by @skylafalls
+- \[[`b9023f68`](https://github.com/skylafalls/fg-sparky-bot/commit/b9023f6892936ba164c49523b9f92e593b2b56c1)\] - guess: handle unknown interaction errors in guessing by @skylafalls
+- \[[`f68cea30`](https://github.com/skylafalls/fg-sparky-bot/commit/f68cea301b2b40ada0b1023491339729bd8bb29b)\] - user/leaderboard: fix search statements for getting profiles by @skylafalls
+
+### Refactors
+
+- \[[`a66a6fd7`](https://github.com/skylafalls/fg-sparky-bot/commit/a66a6fd7597ea7a20e4f500429bd178094571ad3)\] - use deno by @skylafalls
+
+### Chores
+
+- \[[`fe1d2468`](https://github.com/skylafalls/fg-sparky-bot/commit/fe1d24681041be92af4f0a1828d5518ee2bf0569)\] - meta: stop committing numbers by @skylafalls
+- \[[`79963157`](https://github.com/skylafalls/fg-sparky-bot/commit/79963157ebf2e9a22bdb707193820b072596a2af)\] - meta: stop committing numbers by @skylafalls
+- \[[`c1803254`](https://github.com/skylafalls/fg-sparky-bot/commit/c1803254289c579e1356ce913bfcbf1d5705d08b)\] - sparky: nerf streaks by @skylafalls
+- \[[`d7d26c62`](https://github.com/skylafalls/fg-sparky-bot/commit/d7d26c62efe19e8e618051435bd37d7c316ebf69)\] - entries: update entries by @skylafalls
+
 ## 1.3.7 - April 3rd, 2026
 
 mostly misc stuff
