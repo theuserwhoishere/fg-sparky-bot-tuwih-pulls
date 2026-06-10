@@ -11,7 +11,7 @@ import libSQL from "libsql";
 
 export const UsersDB: DataSource = new DataSource({
   type: "better-sqlite3",
-  database: "sparky-bot-db-dev.sqlite",
+  database: Deno.env.get("NODE_ENV") === "development" ? "sparky-bot-db-dev.sqlite" : "sparky-bot-db.sqlite",
   synchronize: true,
   logging: true,
   entities: [UserProfile, NumberhumanData],
