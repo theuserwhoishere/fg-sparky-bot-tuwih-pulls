@@ -7,7 +7,8 @@ const command = new Command()
   .requiredOption("-r, --rarity <rarity>")
   .requiredOption("-h, --hp <hp>")
   .requiredOption("-a, --attack <atk>")
-  .option("-A, --ability <ability>")
+  .option("-s, --spoiler")
+  .option("-A, --ability [ability]")
   .argument("<file>");
 
 command.parse(process.argv);
@@ -18,6 +19,7 @@ const args = command.opts<{
   hp: string;
   attack: string;
   ability: string;
+  spoiler?: string;
 }>();
 
 const file = String(command.processedArgs[0]);
@@ -44,6 +46,7 @@ const numberhumanData: NumberhumanInfo = {
   baseHP: Number.parseInt(args.hp, 10),
   baseATK: Number.parseInt(args.attack, 10),
   ability: args.ability ?? null,
+  isSpoilered: args.spoiler
 };
 
 const json = NumberhumanInfo.array().parse(await Bun.file("numbers/numberhumans.json").json());
