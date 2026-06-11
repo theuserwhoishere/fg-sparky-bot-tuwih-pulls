@@ -13,4 +13,6 @@ export enum NumberhumanSortingOrder {
   ByEvolution = "by-evolution",
   /** Sorts by their level */
   ByLevel = "by-level",
+  /** Sorts by alphabetical names */
+  ByName = "by-name",
 }

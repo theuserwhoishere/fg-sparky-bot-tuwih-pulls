@@ -181,6 +181,10 @@ const Numberdex: Command = {
               name: NumberhumanSortingOrder.ByLevel,
               value: NumberhumanSortingOrder.ByLevel,
             },
+            {
+              name: NumberhumanSortingOrder.ByName,
+              value: NumberhumanSortingOrder.ByName,
+            },
           ],
         },
       ],
