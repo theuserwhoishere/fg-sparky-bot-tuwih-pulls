@@ -1,5 +1,26 @@
 # changelog
 
+## v1.4.0-beta.1 - June 11th, 2026
+
+mainly some formatting fixes, but i also added level ups
+
+### Features
+
+- \[[`dd518985`](https://github.com/skylafalls/fg-sparky-bot/commit/dd518985f0168b8117b3b398117f7786f42dabf7)\] - numberdex: level up buffs by @skylafalls
+- \[[`7a6d0597`](https://github.com/skylafalls/fg-sparky-bot/commit/7a6d0597d42bb59bab54df81aa6b6125476914dd)\] - numberdex: spoiler some entries by @skylafalls
+
+### Fixes
+
+- \[[`781b1734`](https://github.com/skylafalls/fg-sparky-bot/commit/781b1734e6c9e43faff82efe92f4085539e56c9d)\] - numberdex: actually spoiler the numberhumans by @skylafalls
+- \[[`c3f7891f`](https://github.com/skylafalls/fg-sparky-bot/commit/c3f7891f6fa4119f04fb21cde0646104e8e3857d)\] - formatting: missing space by @skylafalls
+- \[[`7ba0acc1`](https://github.com/skylafalls/fg-sparky-bot/commit/7ba0acc127f380546c064b9e40e7ada7a01cd5fa)\] - numberdex: pass the name of the human when it flees by @skylafalls
+- \[[`62ecb077`](https://github.com/skylafalls/fg-sparky-bot/commit/62ecb077dde14116e442ae146a8804119b8a1d00)\] - numberdex/trade: disable buttons once the trade is complete by @skylafalls
+- \[[`faab0752`](https://github.com/skylafalls/fg-sparky-bot/commit/faab0752db0c0a9055399fea358e1322453a72e0)\] - db: use different db in dev by @skylafalls
+
+### Refactors
+
+- \[[`98f5ee7c`](https://github.com/skylafalls/fg-sparky-bot/commit/98f5ee7c4ee9c37e516860c583f9885b3e07b2b7)\] - deduplicate button row function by @skylafalls
+
 ## v1.4.0-beta.0 - June 8th, 2026
 
 first release in a while,,, anyways i added the features i long wanted
