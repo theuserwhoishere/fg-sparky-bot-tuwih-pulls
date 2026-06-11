@@ -40,7 +40,7 @@ export function formatAdd(number: number, precision = 1): string {
 
 export function formatHuman(numberhuman: NumberhumanData, numberhumanStore: NumberhumanStore): string {
   const numberhumanData = numberhumanStore.get(numberhuman.id).expect("should exist");
-  return `level ${bold(numberhuman.level.toString())}, ${numberhuman.evolution === EvolutionType.None ? "" : italic(numberhuman.evolution)}${numberhumanData.name} (HP: ${bold(numberhuman.totalHP(numberhumanStore).toFixed(2))}, ATK: ${bold(numberhuman.totalAtk(numberhumanStore).toFixed(2))}))`;
+  return `level ${bold(numberhuman.level.toString())}, ${numberhuman.evolution === EvolutionType.None ? "" : `${italic(numberhuman.evolution)} `}${numberhumanData.name} (HP: ${bold(numberhuman.totalHP(numberhumanStore).toFixed(2))}, ATK: ${bold(numberhuman.totalAtk(numberhumanStore).toFixed(2))}))`;
 }
 
 /**
