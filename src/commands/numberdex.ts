@@ -21,6 +21,7 @@ import numberdexShowHumans from "./numberdex/show-humans.ts";
 import { NumberhumanSortingOrder } from "./numberdex/sorting.ts";
 import { Logger } from "#utils/logger.ts";
 import { numberdexTrade } from "./numberdex/trade.ts";
+import { numberdexLevelUp } from "./numberdex/level-up.ts";
 
 const Numberdex: Command = {
   async run(_client: Client, interaction: CommandInteraction<"raw" | "cached">): Promise<void> {
@@ -99,6 +100,10 @@ const Numberdex: Command = {
           return;
         }
         await numberdexTrade(interaction, recipient, traderProfile, recipientProfile);
+        return;
+      }
+      case "level-up": {
+        await numberdexLevelUp(interaction);
         return;
       }
       default: {
@@ -203,6 +208,19 @@ const Numberdex: Command = {
           type: ApplicationCommandOptionType.User,
           required: true,
         }
+      ],
+    },
+    {
+      name: "level-up",
+      description: "Level up a numberhuman you have",
+      type: ApplicationCommandOptionType.Subcommand,
+      options: [
+        {
+          name: "id",
+          description: "Numberhuman's id",
+          type: ApplicationCommandOptionType.Integer,
+          required: true,
+        },
       ],
     },
   ],
