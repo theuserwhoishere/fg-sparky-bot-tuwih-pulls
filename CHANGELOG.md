@@ -1,5 +1,16 @@
 # changelog
 
+## v1.4.0 - June 11th, 2026
+
+### Features
+
+- \[[`b4bc9bb4`](https://github.com/skylafalls/fg-sparky-bot/commit/b4bc9bb4ec716297b0230434208c0938cded9efd)\] - numberdex/show-humans: add an option to sort by name by @skylafalls
+
+### Fixes
+
+- \[[`2a034596`](https://github.com/skylafalls/fg-sparky-bot/commit/2a034596cb680af16f4577bbab9f5008f43d1c5a)\] - numberhumans: fix level up buffs
+- \[[`47c5ac64`](https://github.com/skylafalls/fg-sparky-bot/commit/47c5ac648bb8834d27e1ba5c13407295e970b5e7)\] - numberdex: actually dont spoiler if it shouldnt be by @skylafalls
+
 ## v1.4.0-beta.1 - June 11th, 2026
 
 mainly some formatting fixes, but i also added level ups
